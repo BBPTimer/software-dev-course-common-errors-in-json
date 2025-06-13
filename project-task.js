@@ -46,29 +46,37 @@ but it contains multiple syntax errors that prevent it from being parsed.
 
 const invalidBookingJSON = `
 {
-  "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
-  "checkOutDate": "2024-05-20",
-  "guests": [
-    {
-      name: "Alice Johnson",
-      "age": 30,
-      "email": "alice.johnson@example.com"
-    },
-    {
-      "name": "Bob Smith",
-      "age": undefined,
-      "email": "bob.smith@example"
+    "hotelName": "Grand City Hotel",
+    "checkInDate": "2024-05-15",
+    "checkOutDate": "2024-05-20",
+    "guests": [
+        {
+            "name": "Alice Johnson",
+            "age": 30,
+            "email": "alice.johnson@example.com"
+        },
+        {
+            "name": "Bob Smith",
+            "age": null,
+            "email": "bob.smith@example"
+        }
+    ],
+    "roomDetails": {
+        "type": "Suite",
+        "pricePerNight": 200,
+        "amenities": [
+            "WiFi",
+            "Breakfast",
+            "Parking"
+        ]
     }
-  ],
-  "roomDetails": {
-    "type": "Suite",
-    "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
-  }
 }
 `;
 
+//Missing trailing comma on line 50
+//Missing quotation marks around "name" on line 54
+//JSON does not support undefined value on line 60
+//Extra trailing comma on line 67
 
 // ============================================
 // ✅ Requirements
